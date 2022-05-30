@@ -8,10 +8,10 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quos eligendi iusto accusamus, nostrum architecto unde ab pariatur nobis cumque.
       </span>
       <div class="heroButtons">
-        <NuxtLink class="button" to="/download">
+        <NuxtLink id="heroDownload" class="button" to="/download">
           Download
         </NuxtLink>
-        <span class="button secondaryButton" onclick="scroll()">
+        <span class="button secondaryButton" @click="scrollMore()">
           Learn More
         </span>
       </div>
@@ -24,7 +24,11 @@
 
 <script>
 export default {
-
+  methods: {
+    scrollMore() {
+      window.scrollTo(0, window.innerHeight + window.innerHeight/2);
+    }
+  }
 }
 </script>
 

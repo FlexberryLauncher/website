@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -19,6 +20,8 @@
   --secondary-dark: #004f74; 
   --gradient: linear-gradient(to right bottom, #841ee0, #921ee0, #1fffe1, #841ee0, #ffa010 );
   --gradient-secondary: linear-gradient(to right, #841ee0, #4d0f83 );
+  --glass: #ffffff05;
+  --border-radius: 8px;
 }
 
 body {
@@ -134,7 +137,7 @@ body::before {
 .button {
   background: var(--gradient-secondary);
   color: var(--main-light);
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   padding: 8px 36px;
   font-size: 16px;
   font-weight: 500;
@@ -144,7 +147,7 @@ body::before {
 }
 
 .secondaryButton {
-  background: #f2f2f205;
+  background: var(--glass);
   color: var(--main-light);
   backdrop-filter: blur(18px);
 }
@@ -178,3 +181,79 @@ img {
   transform: rotateX(10deg);
   transition: .3s;
 }
+
+.heroImage:hover {
+  transform: rotateX(0deg) scale(1.05);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: transparent;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4%;
+  transition: .5s;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  transform: translateY(0%);
+  opacity: 0;
+}
+
+.navbarScrolled {
+  opacity: 1;
+}
+
+.navbarGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.navbarLink {
+  user-select: none;
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+  color: var(--white);
+  opacity: .5;
+  transition: .3s;
+}
+
+.navbarActiveLink, .navbarLink:hover {
+  opacity: 1;
+}
+
+.navbarTitle {
+  user-select: none;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: .5;
+  letter-spacing: 2px;
+  transition: .3s;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+.navbarPrimaryLink {
+  transform: translateY(-64px);
+  opacity: 1;
+  font-weight: 500;
+  font-size: 14px;
+  background: var(--main-dark);
+  color: var(--white);
+  padding: 4px 16px;
+  border-radius: var(--border-radius);
+  transition: .2s;
+  box-shadow: 0 4px 10px var(--main-shadow);
+}
+
