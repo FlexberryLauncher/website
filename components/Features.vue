@@ -27,7 +27,7 @@ export default {
       features: [
         {
           title: "Up to Date",
-          description: "Up to date with the latest Minecraft version and is always up to date with the latest Minecraft updates.",
+          description: "Always up to date with the latest Minecraft updates.",
           icon: "cube-alt",
           soon: false
         },
@@ -39,19 +39,19 @@ export default {
         },
         {
           title: "Themes",
-          description: "Built-in theme system that allows you to change the look of the launcher.",
+          description: "Theme system that allows you to change the look of the launcher.",
           icon: "color",
           soon: false
         },
         {
           title: "Offline Support",
-          description: "Supports offline mode, so you can play without internet connection. :)",
+          description: "Supports playing without internet connection.",
           icon: "wifi-off",
           soon: false
         },
         {
           title: "Skin Library",
-          description: "Has a skin library with thousands of skins for you to choose from. You can also upload your own skins to the library.",
+          description: "Has a skin library with thousands of skins for you to choose.",
           icon: "show",
           soon: true
         }

@@ -8,9 +8,6 @@
       <span class="button">Download</span>
       <span class="button buttonSecondary">GitHub</span>
     </div>
-    <div class="explore" >
-      <img src="/icons/long-arrow.svg" class="icon"/>
-    </div>
   </div>
 </template>
 
