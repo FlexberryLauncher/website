@@ -30,6 +30,11 @@ body {
   border: 3px solid #0a0a0a;
 }
 
+::selection {
+  background: #841ee050;
+  color: #debafc;
+}
+
 a {
   text-decoration: none;
   color: #ffffff;
@@ -162,9 +167,9 @@ a {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 150%;
+  height: 100%;
   display: block;
-  background: linear-gradient(to top,#000000 0%, #000000 10%, #00000000 50%), linear-gradient(to bottom,#000000 0%, #00000010 50%);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, #00000090 50%, rgba(0,0,0,1) 100%);
   z-index: -500;
 }
 
@@ -173,12 +178,14 @@ a {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 95%;
   display: block;
   background: url(~/assets/backgrounds/waves.png);
+  background: url(https://cdn.discordapp.com/attachments/999766973179252747/1004384670001147994/2022-08-03_16.36.40.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;;
+  background-position: center;
+  filter: brightness(0.5);
   z-index: -1000;
 }
 
@@ -227,6 +234,7 @@ a {
 .featureIcon .icon {
   width: 24px;
   filter: invert(1);
+  user-select: none;
   opacity: .6;
 }
 
@@ -267,6 +275,7 @@ a {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px;
   line-height: 3.6rem;
+  text-shadow: #0e0318 0px 0px 20px;
   text-transform: uppercase;
   user-select: none;
   width: 100%;
