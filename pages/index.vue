@@ -3,6 +3,7 @@
     <Navbar/>
     <Hero/>
     <Features/>
+    <Stats/>
   </div>
 </template>
 

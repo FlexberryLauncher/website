@@ -35,8 +35,22 @@ export default {
     scrollTo(id) {
       document.getElementById(id)?.scrollIntoView({
         behavior: 'smooth'
-      });
+      })
+    },
+    handleScroll () {
+      let navbar = document.querySelector('.navbar')
+      if (window.scrollY > 0) {
+        navbar.classList.add('navbarScrolled')
+      } else {
+        navbar.classList.remove('navbarScrolled')
+      }
     }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 </script>
