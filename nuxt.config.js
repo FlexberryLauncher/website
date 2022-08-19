@@ -4,6 +4,15 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
+    script: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-J5TCL94DLD",
+        async: true,
+      },
+      {
+        src: "ga.js",
+      }
+    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

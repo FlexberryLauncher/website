@@ -7,7 +7,7 @@
       </div>
       <div v-for="(feature, index) in features" :key="index" class="featureCard">
         <div class="featureIcon">
-          <img class="icon" :src="'/icons/' + feature.icon + '.svg'" />
+          <img class="icon" :src="'/icons/' + feature.icon + '.svg'" :alt="feature.icon"/>
           <span class="tag" v-if="feature.soon">soon</span>
         </div>
         <div class="featureCardContext">
