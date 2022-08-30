@@ -4,9 +4,7 @@
       <img src="~/assets/images/fl.png" alt="Flexberry Launcher logo" class="navbarLogo"/>
     </div>
     <div class="navbarSection">
-      <span v-for="link in links" :key="link.name" :class="'navbarLink ' + link.class" @click="scrollTo(link.to)">
-        {{link.name}}
-      </span>
+      <span v-for="link in links" :key="link.name" :class="'navbarLink ' + link.class" @click="scrollTo(link.to)" v-text="link.name"></span>
     </div>
   </div>
 
@@ -26,7 +24,7 @@ export default {
       },
       {
         name: "Download",
-        to: "download",
+        to: "downloads",
         class: "button buttonSecondary"
       }
     ]
@@ -34,7 +32,8 @@ export default {
   methods: {
     scrollTo(id) {
       document.getElementById(id)?.scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
+        block: 'end'
       })
     },
     handleScroll () {

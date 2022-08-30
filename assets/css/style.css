@@ -12,7 +12,7 @@ body {
   background: #000000;
   color: #ffffff;
   overflow-x: hidden;
-  padding-bottom: 100vh;
+  padding-bottom: 10vh;
   display: flex;
   flex-direction: column;
 }
@@ -56,7 +56,8 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(~/assets/backgrounds/herobg.png);
+  background: url(~/assets/backgrounds/hero.jpg);
+  image-rendering: optimizeSpeed;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -88,14 +89,17 @@ a {
   max-width: 812px;
   font-size: 3rem;
   font-weight: 700;
-  line-height: 3.3rem;
+  line-height: 3.8rem;
+  background: linear-gradient(to right, #841ee0, #16bbe4, #6104b3, #841ee0);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .heroDescription {
-  max-width: 800px;
-  font-size: 1.4em;
+  max-width: 900px;
+  font-size: 1.35em;
   font-weight: 200;
-  color: #ffffffbe;
+  color: #ffffff75;
 }
 
 .heroActions {
@@ -121,8 +125,10 @@ a {
 }
 
 .navbarScrolled {
-  background: #000000de;
-  border-bottom: #222222 1px solid;;
+  background: #00000081;
+  backdrop-filter: blur(16px);
+  border-bottom: #222222 1px solid;
+  ;
 }
 
 .navbarLogo {
@@ -177,6 +183,7 @@ a {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -210,7 +217,8 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(~/assets/backgrounds/featuresbg.png);
+  background: url(~/assets/backgrounds/features.jpg);
+  image-rendering: optimizeSpeed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -227,10 +235,10 @@ a {
 }
 
 .featureCards {
-  display: grid; 
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 32%));
   grid-template-rows: repeat(auto-fill, auto);
-  gap: 12px; 
+  gap: 12px;
   align-items: center;
   width: 100%;
   grid-auto-flow: row;
@@ -260,7 +268,8 @@ a {
   gap: 12px;
 }
 
-.featureIcon .icon {
+.featureIcon .icon,
+.downloadCardIcon .icon {
   width: 24px;
   filter: invert(1);
   user-select: none;
@@ -327,34 +336,217 @@ a {
   user-select: none;
 }
 
-.stats {
-  margin-top: 64px;
-  height: 256px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-}
-
-.stats::before {
+.downloadCards::after {
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, #000000 0%, #000000d0 50%, #000000 100%);
-  z-index: -500;
-}
-
-.stats::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url(~/assets/backgrounds/statsbg.png);
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  background: url(~/assets/backgrounds/grid.png);
   background-size: cover;
-  background-repeat: no-repeat;
+  image-rendering: optimizeSpeed;
   background-position: center;
-  filter: brightness(0.4);
-  z-index: -1000;
+  z-index: -500;
+  opacity: .5;
+}
+
+.downloadCards::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(to right, #000000 0%, #00000000 50%, #000000 100%), linear-gradient(to bottom, #000000 0%, #00000091 50%, #000000 100%);
+  z-index: -200;
+}
+
+.downloads {
+  margin-top: 24px;
+  position: relative;
+  padding: 64px 128px;
+}
+
+.downloads::after {
+  content: "";
+  position: absolute;
+  left: -16%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16%;
+  display: block;
+  background: #b31ee020;
+  z-index: -100;
+  border-radius: 50%;
+  filter: blur(20vh)
+}
+
+.downloads::before {
+  content: "";
+  position: absolute;
+  right: -16%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16%;
+  display: block;
+  background: #921ee020;
+  z-index: -100;
+  border-radius: 50%;
+  filter: blur(20vh)
+}
+
+.downloadCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 0 32px 0;
+  width: 100%;
+}
+
+.downloadCard {
+  width: 88%;
+  padding: 32px 32px;
+  background: #080808;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: default;
+  transition: .4s;
+}
+
+.fullWidth {
+  width: 100%;
+  background: #0c0c0c;
+  transform: scale(1.05);
+  box-shadow: #55555540 0px 0px 32px;
+  border: #55555550 1px solid;
+}
+
+.downloadCardTitle {
+  transition: .2s;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffffbe;
+  font-size: 1.2rem;
+}
+
+.downloadCardActions {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.downloadVersion {
+  font-weight: 200;
+  color: #ffffff80;
+  font-size: .8rem;
+}
+
+.downloadButton {
+  padding: 6px 32px;
+  width: 100%;
+  text-align: center;
+  font-size: .85rem;
+  font-weight: 300;
+  background: #030303;
+  cursor: pointer;
+  user-select: none;
+  transition: .4s;
+  border: 1px transparent solid;
+}
+
+.downloadButton:not(.disabled):hover {
+  box-shadow: #55555520 0px 0px 12px;
+  border: #55555550 1px solid;
+}
+
+.downloadButton.disabled {
+  opacity: .2;
+  cursor: not-allowed !important;
+}
+
+.downloadPlatform {
+  width: 16px;
+  filter: invert(1);
+}
+
+.downloadCardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.downloadsInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 6px;
+}
+
+.downloadsTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #841ee0;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px;
+  line-height: 3.6rem;
+  text-shadow: #0e0318 0px 0px 20px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.downloadsDescription {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: .5;
+}
+
+@media (max-width: 1020px) {
+  .downloadCards {
+    flex-direction: column;
+  }
+
+  .downloads {
+    padding: 64px 16px;
+  }
+
+  .downloadCard {
+    width: 90%;
+  }
+
+  .downloadsInfo,
+  .featuresInfo {
+    text-align: center;
+  }
+
+  .downloadsTitle {
+    font-size: 3rem;
+  }
+
+  .featureCards {
+    justify-content: center;
+  }
+
+  .heroContent {
+    padding: 0 64px;
+  }
+
+  .heroTitle {
+    font-size: 2.7rem;
+  }
+
+  .navbarSection:nth-child(2) {
+    display: none;
+  }
 }

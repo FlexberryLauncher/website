@@ -11,8 +11,8 @@
           <span class="tag" v-if="feature.soon">soon</span>
         </div>
         <div class="featureCardContext">
-          <span class="featureCardTitle">{{ feature.title }}</span>
-          <span class="featureCardDescription">{{ feature.description }}</span>
+          <span class="featureCardTitle" v-text="feature.title"></span>
+          <span class="featureCardDescription" v-text="feature.description"></span>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@ export default {
         },
         {
           title: "Cross-Platform",
-          description: "Works on Linux, MacOS and Windows with full support.",
+          description: "Works on macOS*, Windows and Linux.",
           icon: "bolt-circle",
           soon: false
         },
@@ -44,9 +44,9 @@ export default {
           soon: false
         },
         {
-          title: "Offline Support",
-          description: "Supports playing without internet connection.",
-          icon: "wifi-off",
+          title: "Automatic Java Installer",
+          description: "Installs Java for MC versions that requires different version of Java.",
+          icon: "java",
           soon: false
         },
         {
