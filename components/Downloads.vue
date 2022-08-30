@@ -31,13 +31,26 @@ export default {
         updateModules: []
       },
       launcherVersion: "v1.0.0",
-      platform: 'ac',
+      platform: 'other',
       orderedDownloads: []
     }
   },
   mounted() {
     this.getDownloads();
-    this.platform = navigator.platform;
+    const agent = navigator.userAgent
+    if (agent.includes("Android")) {
+      this.platform = "android";
+    } else if (agent.includes("iP")) {
+      this.platform = "ios";
+    } else if (agent.includes("Windows")) {
+      this.platform = "win32";
+    } else if (agent.includes("Mac") && !agent.includes("iP")) {
+      this.platform = "mac";
+    } else if (agent.includes("Linux") && !agent.includes("Android")) {
+      this.platform = "linux";
+    } else {
+      this.platform = "other";
+    }
   },
   methods: {
     getDownloads() {
@@ -71,9 +84,9 @@ export default {
       // if navigator.platform includes Win, make downloads["win32"] the first card and others the second and third cards
       // if navigator.platform includes Linux, make downloads["linux"] the first card and others the second and third cards
       // else, make downloads["source"] the first card and others the second and third cards
-      if (this.platform.includes("Win")) {
+      if (this.platform == "win32") {
         this.orderedDownloads = [downloads["source"], downloads["win32"], downloads["linux"]];
-      } else if (this.platform.includes("Linux")) {
+      } else if (this.platform == "linux") {
         this.orderedDownloads = [downloads["source"], downloads["linux"], downloads["win32"]];
       } else {
         this.orderedDownloads = [downloads["linux"], downloads["source"], downloads["win32"]];
