@@ -6,6 +6,10 @@
   -webkit-user-drag: none;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
@@ -395,7 +399,7 @@ a {
   background: #921ee020;
   z-index: -100;
   border-radius: 50%;
-  filter: blur(20vh)
+  filter: blur(20vh);
 }
 
 .downloadCards {
