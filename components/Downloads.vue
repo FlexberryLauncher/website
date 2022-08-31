@@ -81,9 +81,6 @@ export default {
         });
     },
     orderPlatforms(downloads) {
-      // if navigator.platform includes Win, make downloads["win32"] the first card and others the second and third cards
-      // if navigator.platform includes Linux, make downloads["linux"] the first card and others the second and third cards
-      // else, make downloads["source"] the first card and others the second and third cards
       if (this.platform == "win32") {
         this.orderedDownloads = [downloads["source"], downloads["win32"], downloads["linux"]];
       } else if (this.platform == "linux") {
@@ -91,7 +88,6 @@ export default {
       } else {
         this.orderedDownloads = [downloads["linux"], downloads["source"], downloads["win32"]];
       }
-      console.log(this.orderedDownloads);
     }
   },
 };

@@ -6,10 +6,6 @@
   -webkit-user-drag: none;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
@@ -372,34 +368,6 @@ a {
   margin-top: 24px;
   position: relative;
   padding: 64px 128px;
-}
-
-.downloads::after {
-  content: "";
-  position: absolute;
-  left: -16%;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 16%;
-  display: block;
-  background: #b31ee020;
-  z-index: -100;
-  border-radius: 50%;
-  filter: blur(20vh)
-}
-
-.downloads::before {
-  content: "";
-  position: absolute;
-  right: -16%;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 16%;
-  display: block;
-  background: #921ee020;
-  z-index: -100;
-  border-radius: 50%;
-  filter: blur(20vh);
 }
 
 .downloadCards {
