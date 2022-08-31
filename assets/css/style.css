@@ -238,16 +238,17 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 6vw;
+  padding: 0;
 }
 
 .featureCards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 32%));
+  grid-template-columns: repeat(auto-fit, minmax(30%, 320px));
   grid-template-rows: repeat(auto-fill, auto);
   gap: 12px;
   align-items: center;
-  width: 100%;
+  justify-content: center;
+  width: 80%;
   grid-auto-flow: row;
 }
 
@@ -380,15 +381,15 @@ a {
 .downloadCards {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
   padding: 16px 0 32px 0;
   width: 100%;
 }
 
 .downloadCard {
-  width: 88%;
+  width: 332px;
   padding: 32px 32px;
   background: #080808;
   display: flex;
@@ -400,7 +401,7 @@ a {
 }
 
 .fullWidth {
-  width: 100%;
+  width: 424px;
   background: #0c0c0c;
   transform: scale(1.05);
   box-shadow: #55555540 0px 0px 32px;
@@ -560,7 +561,7 @@ a {
   width: 80%;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) translateY(96px);
+  transform: translateX(-50%) translateY(92px);
   background: #18181890;
   box-shadow: #00000040 0px 0px 32px;
   padding: 32px 64px;
