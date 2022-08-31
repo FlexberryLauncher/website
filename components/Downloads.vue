@@ -12,7 +12,7 @@
         </div>
         <span class="downloadVersion" v-text="'Download ' + launcherVersion"></span>
         <div class="downloadCardActions">
-          <a class="downloadButton" v-for="(obj, index) in download" :key="index" v-text="obj.type" :href="obj.url" download></a>
+          <a class="downloadButton" v-for="(obj, index) in download" :key="index" v-text="obj.type == 'exe' ? 'installer' : obj.type" :href="obj.url" download></a>
           <span class="downloadButton disabled" v-if="download.length == 1">installer</span>
         </div>
       </div>
