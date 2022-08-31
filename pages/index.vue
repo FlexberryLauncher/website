@@ -4,6 +4,8 @@
     <Hero/>
     <Features/>
     <Downloads/>
+    <Socials/>
+    <Footer/>
   </div>
 </template>
 
