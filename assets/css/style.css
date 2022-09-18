@@ -63,7 +63,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(~/assets/backgrounds/hero.jpg);
+  background: url(~/assets/backgrounds/hero.avif);
   image-rendering: optimizeSpeed;
   background-size: cover;
   background-position: top;
@@ -224,7 +224,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(~/assets/backgrounds/features.jpg);
+  background: url(~/assets/backgrounds/features.avif);
   image-rendering: optimizeSpeed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -353,7 +353,7 @@ a {
   margin-left: 50%;
   transform: translateX(-50%);
   display: block;
-  background: url(~/assets/backgrounds/grid.png);
+  background: url(~/assets/backgrounds/grid.avif);
   background-size: cover;
   image-rendering: optimizeSpeed;
   background-position: center;
