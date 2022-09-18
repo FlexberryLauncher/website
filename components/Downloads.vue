@@ -4,7 +4,20 @@
       <span class="downloadsTitle">Downloads</span>
       <span class="downloadsDescription">Download Flexberry Launcher for your platform</span>
     </div>
-    <div class="downloadCards">
+    <div class="downloadCards skeleton" v-if="orderedDownloads[0] == 'skeleton'">
+      <div :class="(index == 1) ? 'downloadCard fullWidth' : 'downloadCard card'+index" v-for="(download, index) in orderedDownloads" :key="index">
+        <div class="downloadCardContent">
+          <div class="downloadPlatform"></div>
+          <span class="downloadCardTitle">Unknown</span>
+        </div>
+        <span class="downloadVersion">Download Unknown</span>
+        <div class="downloadCardActions">
+          <span class="downloadButton">Unknown</span>
+          <span class="downloadButton">Unknown</span>
+        </div>
+      </div>
+    </div>
+    <div class="downloadCards" v-else>
       <div :class="(index == 1) ? 'downloadCard fullWidth' : 'downloadCard card'+index" v-for="(download, index) in orderedDownloads" :key="index">
         <div class="downloadCardContent">
           <img class="downloadPlatform" :src="'/icons/' + (download[0].platform || 'archive') + '.png'" :alt="download[0].platform || 'source'"/>
@@ -31,8 +44,8 @@ export default {
         updateModules: []
       },
       launcherVersion: "v1.0.0",
-      platform: 'other',
-      orderedDownloads: []
+      platform: "other",
+      orderedDownloads: ["skeleton", "skeleton", "skeleton"]
     }
   },
   mounted() {
@@ -81,13 +94,15 @@ export default {
         });
     },
     orderPlatforms(downloads) {
-      if (this.platform == "win32") {
-        this.orderedDownloads = [downloads["source"], downloads["win32"], downloads["linux"]];
-      } else if (this.platform == "linux") {
-        this.orderedDownloads = [downloads["source"], downloads["linux"], downloads["win32"]];
-      } else {
-        this.orderedDownloads = [downloads["linux"], downloads["source"], downloads["win32"]];
-      }
+      setTimeout(() => {
+        if (this.platform == "win32") {
+          this.orderedDownloads = [downloads["source"], downloads["win32"], downloads["linux"]];
+        } else if (this.platform == "linux") {
+          this.orderedDownloads = [downloads["source"], downloads["linux"], downloads["win32"]];
+        } else {
+          this.orderedDownloads = [downloads["linux"], downloads["source"], downloads["win32"]];
+        }
+      }, 1000);
     }
   },
 };
