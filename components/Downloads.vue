@@ -60,7 +60,7 @@ export default {
           const latestRelease = response.data[0];
           this.launcherVersion = latestRelease.tag_name;
           latestRelease.assets.forEach((asset) => {
-            this.downloads[asset.name.split("-")[2] || "updateModules"].push({
+            this.downloads[asset.name.includes("asar") ? "updateModules" : (asset.name.split("-")[2] || "updateModules")].push({
               url: asset.browser_download_url,
               type: asset.name.split(".")[1],
               platform: asset.name.split("-")[2]
