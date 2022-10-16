@@ -1,6 +1,6 @@
 export default {
   head: {
-    title: 'Flexberry Launcher',
+    title: 'Flexberry Launcher — Open-source launcher Minecraft',
     htmlAttrs: {
       lang: 'en'
     },
@@ -17,13 +17,13 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'format-detection', content: 'telephone=no' },
-      { hid: 'title', name: 'title', content: 'Flexberry Launcher' },
+      { hid: 'title', name: 'title', content: 'Flexberry Launcher — Open-source launcher Minecraft' },
       { hid: 'description', name: 'description', content: 'Open-source, secure and lightweight launcher for Minecraft. Always up to date with latest Minecraft updates.' },
       { hid: 'theme-color', name: 'theme-color', content: '#6822a8' },
 
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: 'https://flexberry.app/' },
-      { name: 'og:title', content: 'Flexberry Launcher' },
+      { name: 'og:title', content: 'Flexberry Launcher — Open-source launcher Minecraft' },
       { name: 'og:description', content: 'Open-source, secure and lightweight launcher for Minecraft. Always up to date with latest Minecraft updates.' },
       { name: 'og:image', content: '/metaimage.png' },
 

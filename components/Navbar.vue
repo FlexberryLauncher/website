@@ -23,18 +23,26 @@ export default {
         to: "features"
       },
       {
-        name: "Download",
+        name: "Downloads",
         to: "downloads",
+      },
+      {
+        name: "Github",
+        to: "https://github.com/FlexberryLauncher/launcher",
         class: "button buttonSecondary"
       }
     ]
   }),
   methods: {
     scrollTo(id) {
-      document.getElementById(id)?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end'
-      })
+      if (id.startsWith("http")) {
+        window.open(id, "_blank");
+      } else {
+        document.getElementById(id)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end'
+        })
+      }
     },
     handleScroll () {
       let navbar = document.querySelector('.navbar')
